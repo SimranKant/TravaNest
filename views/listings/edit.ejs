@@ -2,7 +2,13 @@
 <div class="row mt-3">
   <div class="col-8 offset-2">
     <h3>Edit Listing</h3>
-    <form method="post" action="/listings/<%= listing._id%>?_method=PUT" novalidate class="needs-validation" enctype="multipart/form-data">
+    <form
+      method="post"
+      action="/listings/<%= listing._id%>?_method=PUT"
+      novalidate
+      class="needs-validation"
+      enctype="multipart/form-data"
+    >
       <div class="mb-3">
         <label for="title" class="form-label">Title</label>
         <input
@@ -22,12 +28,14 @@
           placeholder="enter description"
           class="form-control"
           required
-        ><%= listing.description %></textarea>
+        >
+<%= listing.description %></textarea
+        >
         <div class="invalid-feedback">Please enter a short description</div>
       </div>
       <div class="mb-3">
-        <label  class="form-label">Old Image</label><br>
-        <img src="<%= originalImageUrl%>">
+        <label class="form-label">Old Image</label><br />
+        <img src="<%= originalImageUrl%>" />
       </div>
       <div class="mb-3">
         <label for="image" class="form-label">Upload New Image</label>
@@ -37,9 +45,83 @@
           type="file"
           class="form-control"
         />
-        
       </div>
+
       <div class="row">
+        <div class="mb-3 col-md-4">
+          <label for="category" class="form-label">Category</label>
+          <select name="listing[category]" class="form-select" required>
+            <option value="">Choose a category</option>
+            <option
+              value="Trending"
+              selected="<%= listing.category === 'Trending' %>"
+            >
+              Trending
+            </option>
+            <option
+              value="Rooms"
+              selected="<%= listing.category === 'Rooms' %>"
+            >
+              Rooms
+            </option>
+            <option
+              value="Iconic Cities"
+              selected="<%= listing.category === 'Iconic Cities' %>"
+            >
+              Iconic Cities
+            </option>
+            <option
+              value="Mountains"
+              selected="<%= listing.category === 'Mountains' %>"
+            >
+              Mountains
+            </option>
+            <option
+              value="Castles"
+              selected="<%= listing.category === 'Castles' %>"
+            >
+              Castles
+            </option>
+            <option
+              value="Amazing Pools"
+              selected="<%= listing.category === 'Amazing Pools' %>"
+            >
+              Amazing Pools
+            </option>
+            <option
+              value="Camping"
+              selected="<%= listing.category === 'Camping' %>"
+            >
+              Camping
+            </option>
+            <option
+              value="Farms"
+              selected="<%= listing.category === 'Farms' %>"
+            >
+              Farms
+            </option>
+            <option
+              value="Arctic"
+              selected="<%= listing.category === 'Arctic' %>"
+            >
+              Arctic
+            </option>
+            <option
+              value="Domes"
+              selected="<%= listing.category === 'Domes' %>"
+            >
+              Domes
+            </option>
+            <option
+              value="Boats"
+              selected="<%= listing.category === 'Boats' %>"
+            >
+              Boats
+            </option>
+          </select>
+          <div class="invalid-feedback">Please select a valid category</div>
+        </div>
+
         <div class="mb-3 col-md-4">
           <label for="price" class="form-label">Price</label>
           <input
@@ -76,6 +158,7 @@
         />
         <div class="invalid-feedback">Location should be valid</div>
       </div>
+
       <button class="btn btn-dark edit-btn mt-3">Edit</button>
       <br /><br />
     </form>
