@@ -1,51 +1,55 @@
 <% layout('layouts/boilerplate') -%>
 <body>
-  <!-- <h3>All Listings</h3> -->
   <div id="filters">
-    <div class="filter">
+    <a href="/listings?category=Trending" class="filter">
       <div><i class="fa-solid fa-fire"></i></div>
       <p>Trending</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Rooms" class="filter">
       <div><i class="fa-solid fa-bed"></i></div>
       <p>Rooms</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Iconic%20cities" class="filter">
       <div><i class="fa-solid fa-mountain-city"></i></div>
       <p>Iconic cities</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Mountains" class="filter">
       <div><i class="fa-solid fa-mountain"></i></div>
       <p>Mountains</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Castles" class="filter">
       <div><i class="fa-brands fa-fort-awesome"></i></div>
       <p>Castles</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Amazing%20Pools" class="filter">
       <div><i class="fa-solid fa-person-swimming"></i></div>
       <p>Amazing Pools</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Camping" class="filter">
       <div><i class="fa-solid fa-campground"></i></div>
       <p>Camping</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Farms" class="filter">
       <div><i class="fa-solid fa-tractor"></i></div>
       <p>Farms</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Arctic" class="filter">
       <div><i class="fa-solid fa-snowflake"></i></div>
       <p>Arctic</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Domes" class="filter">
       <div><i class="fa-solid fa-igloo"></i></div>
       <p>Domes</p>
-    </div>
-    <div class="filter">
+    </a>
+    <a href="/listings?category=Boats" class="filter">
       <div><i class="fa-solid fa-sailboat"></i></div>
       <p>Boats</p>
-    </div>
+    </a>
+    <a href="/listings" class="filter reset-filter">
+      <div><i class="fa-solid fa-rotate-left"></i></div>
+      <p>Reset Filters</p>
+    </a>
+
     <div class="tax-toggle">
       <div class="form-check-reverse form-switch">
         <input
@@ -60,9 +64,10 @@
       </div>
     </div>
   </div>
+
   <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 mt-3">
     <% for(let listing of allListings){ %>
-    <a href="/listings/<%= listing._id%>" class="listing-link">
+    <a href="/listings/<%= listing._id %>" class="listing-link">
       <div class="card col listing-card">
         <img
           src="<%= listing.image.url %>"

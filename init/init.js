@@ -1,27 +1,41 @@
+// seed.js
+
+if (process.env.NODE_ENV !== "production") {
+  require("dotenv").config();
+}
+
+
 const mongoose = require("mongoose");
 const initData = require("./data.js");
 const Listing = require("../models/listing.js");
 
-const MONGO_URL = "mongodb://127.0.0.1:27017/wanderlust";
+const dbUrl = process.env.ATLASDB_URL;
 
 main()
   .then(() => {
-    console.log("connected to DB");
+    console.log("✅ Connected to MongoDB Atlas");
+    initDB();
   })
   .catch((err) => {
-    console.log(err);
+    console.log("❌ MongoDB connection error:", err);
   });
+console.log("Connecting to:", process.env.ATLASDB_URL);
 
 async function main() {
-  await mongoose.connect(MONGO_URL);
+  await mongoose.connect(dbUrl);
 }
 
 const initDB = async () => {
-  await Listing.deleteMany();
-  initData.data = initData.data.map((obj)=>({
-    ...obj,owner: "683ec49635cd27d25a84d13c",
-  }));
-  await Listing.insertMany(initData.data);
+  try {
+    await Listing.deleteMany({});
+    initData.data = initData.data.map((obj) => ({
+      ...obj,
+      owner: "685941027460d347ad94113a", // ✅ Ensure this user exists in Atlas
+    }));
+    await Listing.insertMany(initData.data);
+    console.log("🌱 Sample listings added successfully!");
+    mongoose.connection.close(); // close the connection after seeding
+  } catch (err) {
+    console.log("❌ Error inserting data:", err);
+  }
 };
-
-initDB();
