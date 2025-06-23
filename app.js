@@ -75,15 +75,20 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 app.use((req, res, next) => {
+  console.log("Current user is:", req.user);
   res.locals.success = req.flash("success");
   res.locals.error = req.flash("error");
   res.locals.currUser = req.user;
   next();
 });
 
+
+
 app.get("/", (req, res) => {
   res.redirect("/listings"); 
 });
+
+
 
 app.use("/listings", listingsRouter);
 app.use("/listings/:id/reviews", reviewsRouter);

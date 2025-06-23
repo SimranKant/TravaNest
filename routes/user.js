@@ -21,7 +21,7 @@ router
       failureRedirect: "/login",
       failureFlash: true,
     }),
-    wrapAsync(reviewController.login)
+    (reviewController.login)
   );
 router.get("/logout", reviewController.logout);
 
