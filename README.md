@@ -73,9 +73,8 @@ This project was built as a hands-on exercise in full-stack development using th
 
 ## 📬 Contact
 
-**Simran Kant**  
-📧 simrankant@example.com  
-🔗 [Portfolio](https://simrankant.vercel.app) • [LinkedIn]([https://linkedin.com/in/simrankant](https://www.linkedin.com/in/simran-kant-74056a281/))
+**Simran Kant**   
+🔗 [Portfolio](https://simrankant.vercel.app) • [LinkedIn](https://www.linkedin.com/in/simran-kant-74056a281/)
 
 ---
 
