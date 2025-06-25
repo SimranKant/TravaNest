@@ -36,7 +36,7 @@ This project was built as a hands-on exercise in full-stack development using th
 | Frontend           | Backend             | Database     | Authentication |
 |--------------------|---------------------|--------------|----------------|
 | HTML, CSS, JS      | Node.js, Express.js | MongoDB      | Passport.js    |
-| EJS Templating     |                     | Mongoose     |                |
+| EJS Templating     | Mongoose            |              |                |
 | Bootstrap          |                     |              |                |
 
 ---
@@ -76,12 +76,6 @@ This project was built as a hands-on exercise in full-stack development using th
 **Simran Kant**  
 📧 simrankant@example.com  
 🔗 [Portfolio](https://simrankant.vercel.app) • [LinkedIn]([https://linkedin.com/in/simrankant](https://www.linkedin.com/in/simran-kant-74056a281/))
-
----
-
-## 📝 License
-
-This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) file for details.
 
 ---
 
